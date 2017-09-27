@@ -8,7 +8,6 @@ declare const Prism: any;
 export class SyntaxHighlightPipe implements PipeTransform {
 
   public transform(code: string, type: string): string {
-    console.log(Prism.languages);
     if (code && type) {
       let lang;
       switch (type) {
