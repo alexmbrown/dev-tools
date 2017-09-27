@@ -21,6 +21,7 @@ export class TextDiffComponent implements OnInit {
   public text2: FormControl;
 
   public textDiff: string;
+
   constructor(private formBuilder: FormBuilder) {}
 
   public ngOnInit(): void {

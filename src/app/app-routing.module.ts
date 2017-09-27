@@ -4,7 +4,9 @@ const routes: Routes = [
   {
     path: '',
     children: [
+      { path: 'about', loadChildren: './about/about.module#AboutModule' },
       { path: 'text-diff', loadChildren: './text-diff/text-diff.module#TextDiffModule' },
+      { path: 'source', loadChildren: './source-viewer/source-viewer.module#SourceViewerModule' },
       {
         path: '',
         redirectTo: '/text-diff',
