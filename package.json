@@ -26,7 +26,12 @@
     "core-js": "^2.4.1",
     "diff": "^3.3.1",
     "hammerjs": "^2.0.8",
+    "prismjs": "^1.8.1",
+    "remark": "^8.0.0",
+    "remark-html": "^6.0.1",
+    "remark-preset-lint-recommended": "^3.0.1",
     "rxjs": "^5.4.2",
+    "vfile-reporter": "^4.0.0",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {

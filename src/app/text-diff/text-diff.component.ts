@@ -9,7 +9,7 @@ interface TextInput {
 }
 
 @Component({
-  selector: 'app-text-diff',
+  selector: 'dt-text-diff',
   templateUrl: './text-diff.component.html',
   styleUrls: ['./text-diff.component.scss']
 })

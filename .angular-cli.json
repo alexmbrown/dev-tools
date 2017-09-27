@@ -17,11 +17,16 @@
       "test": "test.ts",
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
-      "prefix": "app",
+      "prefix": "dt",
       "styles": [
-        "assets/styles/main.scss"
+        "assets/styles/main.scss",
+        "../node_modules/prismjs/themes/prism-funky.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/prismjs/prism.js",
+        "../node_modules/prismjs/components/prism-typescript.js",
+        "../node_modules/prismjs/components/prism-scss.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

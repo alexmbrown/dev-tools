@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { SourceService } from '../core/services/source.service';
 
 @Component({
-  selector: 'app-source-viewer',
+  selector: 'dt-source-viewer',
   templateUrl: './source-viewer.component.html',
   styleUrls: ['./source-viewer.component.css']
 })
