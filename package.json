@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start": "ng serve",
+    "build:local": "ng build --prod",
     "build": "ng build --prod --base-href https://alexmbrown.github.io/dev-tools/",
     "pretest": "ng lint --fix",
     "test": "ng test --single-run",
