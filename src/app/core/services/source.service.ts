@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/do';
 
 const ROOT_URL = 'https://raw.githubusercontent.com/alexmbrown/dev-tools/master/src/app/';
 
@@ -13,8 +12,7 @@ export class SourceService {
 
   public getComponent(url): Observable<string> {
     return this.http.get(`${ROOT_URL}${url}/${url}.component.ts`)
-      .map((res: Response) => res.text())
-      .do(text => console.log(text));
+      .map((res: Response) => res.text());
   }
 
   public getHTML(url): Observable<string> {
