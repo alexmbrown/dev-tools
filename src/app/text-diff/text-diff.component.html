@@ -1,0 +1,17 @@
+<form [formGroup]="textDiffForm" novalidate>
+  <md-grid-list cols="2" rowHeight="fit" gutterSize="16px">
+    <md-grid-tile>
+      <md-form-field class="fill">
+        <textarea mdInput placeholder="Please Enter Text Here" [formControl]="text1"></textarea>
+      </md-form-field>
+    </md-grid-tile>
+    <md-grid-tile>
+      <md-form-field class="fill">
+        <textarea mdInput placeholder="Please Enter Text Here" [formControl]="text2"></textarea>
+      </md-form-field>
+    </md-grid-tile>
+    <md-grid-tile colspan="2">
+      <div class="fill result" [innerHtml]="textDiff"></div>
+    </md-grid-tile>
+  </md-grid-list>
+</form>

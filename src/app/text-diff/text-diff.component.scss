@@ -1,0 +1,18 @@
+@import '../../assets/styles/variables.scss';
+
+md-grid-list {
+  height: calc(100vh - 6rem);
+}
+
+.result {
+  font-size: 1.5rem;
+
+  /deep/ span.add {
+    background: green;
+  }
+
+  /deep/ span.remove {
+    background: red;
+  }
+
+}

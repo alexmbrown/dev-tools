@@ -1,0 +1,23 @@
+language: node_js
+node_js:
+   - “7”
+
+branches:
+   only:
+      - master
+
+before_script:
+   - npm install -g @angular/cli
+
+script:
+   - npm test
+   - npm run e2e
+   - npm run build
+
+deploy:
+  local_dir: /dist
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  on:
+    branch: master
