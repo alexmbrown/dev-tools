@@ -1,0 +1,32 @@
+md-card {
+  width: calc(100% - 0.5rem);
+  height: calc(100% - 0.5rem);
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24), 0 0 2px rgba(0, 0, 0, 0.12);
+  padding: 0;
+}
+
+md-card-header {
+  padding: 0.5rem 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.03);
+  height: 3.5rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  md-card-title {
+    margin: 0;
+    font-weight: 400;
+    font-size: 1.5rem;
+  }
+}
+
+md-card-content {
+  padding: 0.5rem;
+  width: 100%;
+  height: calc(100% - 3.5rem);
+  box-sizing: border-box;
+}

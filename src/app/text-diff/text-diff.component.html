@@ -1,17 +1,35 @@
 <form [formGroup]="textDiffForm" novalidate>
   <md-grid-list cols="2" rowHeight="fit" gutterSize="16px">
     <md-grid-tile>
-      <md-form-field class="fill">
-        <textarea mdInput placeholder="Please Enter Text Here" [formControl]="text1"></textarea>
-      </md-form-field>
+      <dt-panel title="Original Text" class="fill">
+        <dt-panel-actions>
+          <button md-icon-button (click)="text1.setValue('')">
+            <md-icon class="md-24" aria-label="Clear original text">clear</md-icon>
+          </button>
+        </dt-panel-actions>
+        <dt-panel-content>
+          <textarea class="fill" mdInput placeholder="Please Enter Text Here" [formControl]="text1"></textarea>
+        </dt-panel-content>
+      </dt-panel>
     </md-grid-tile>
     <md-grid-tile>
-      <md-form-field class="fill">
-        <textarea mdInput placeholder="Please Enter Text Here" [formControl]="text2"></textarea>
-      </md-form-field>
+      <dt-panel title="Changed Text" class="fill">
+        <dt-panel-actions>
+          <button md-icon-button (click)="text2.setValue('')">
+            <md-icon class="md-24" aria-label="Clear original text">clear</md-icon>
+          </button>
+        </dt-panel-actions>
+        <dt-panel-content>
+          <textarea class="fill" mdInput placeholder="Please Enter Text Here" [formControl]="text2"></textarea>
+        </dt-panel-content>
+      </dt-panel>
     </md-grid-tile>
     <md-grid-tile colspan="2">
-      <div class="fill result" [innerHtml]="textDiff"></div>
+      <dt-panel title="Result" class="fill">
+        <dt-panel-content>
+          <div class="fill result" [innerHtml]="textDiff"></div>
+        </dt-panel-content>
+      </dt-panel>
     </md-grid-tile>
   </md-grid-list>
 </form>

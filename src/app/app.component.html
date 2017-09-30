@@ -1,18 +1,27 @@
 <!-- HEADER -->
-<md-toolbar>
+<md-toolbar color="primary">
   <span>Dev Tools</span>
   <span class="spacer"></span>
   <button md-icon-button *ngIf="sourceLinkActive()" (click)="viewSource()">
     <md-icon class="md-24" aria-label="View source">code</md-icon>
   </button>
+  <a md-button href="https://github.com/alexmbrown/dev-tools">GITHUB</a>
 </md-toolbar>
 <md-sidenav-container>
   <!-- SIDENAV -->
   <md-sidenav #sidenav mode="side" opened="true">
-    <md-list>
-      <md-list-item><a routerLink="/about" routerLinkActive="active">About</a></md-list-item>
-      <md-list-item><a routerLink="/text-diff" routerLinkActive="active">Text Diff</a></md-list-item>
-    </md-list>
+    <nav>
+      <ul>
+        <li><md-list-item><a routerLink="/about" routerLinkActive="active">About</a></md-list-item></li>
+      </ul>
+    </nav>
+    <nav>
+      <h3>Text</h3>
+      <ul>
+        <li><a routerLink="/text-diff" routerLinkActive="active">Difference</a></li>
+        <li><a href="#">Formatting</a></li>
+      </ul>
+    </nav>
   </md-sidenav>
   <!-- CONTENT -->
   <div class="content">

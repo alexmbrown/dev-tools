@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SourceService } from '../core/services/source.service';
 
 @Component({
   selector: 'dt-about',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  public readme: string;
 
-  ngOnInit() {
+  constructor(private source: SourceService) {}
+
+  public ngOnInit(): void {
+    this.source.getReadme().subscribe((readme: string) => this.readme = readme);
   }
 
 }
