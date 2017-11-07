@@ -1,31 +1,31 @@
 <!-- HEADER -->
-<md-toolbar color="primary">
-  <md-icon>build</md-icon>
+<mat-toolbar color="primary">
+  <mat-icon>build</mat-icon>
   <span>Dev Tools</span>
   <span class="spacer"></span>
-  <button md-icon-button *ngIf="sourceLinkActive()" (click)="viewSource()">
-    <md-icon class="md-24" aria-label="View source">code</md-icon>
+  <button mat-icon-button *ngIf="sourceLinkActive()" (click)="viewSource()">
+    <mat-icon class="mat-24" aria-label="View source">code</mat-icon>
   </button>
-  <a md-button href="https://github.com/alexmbrown/dev-tools">GITHUB</a>
-</md-toolbar>
-<md-sidenav-container>
+  <a mat-button href="https://github.com/alexmbrown/dev-tools">GITHUB</a>
+</mat-toolbar>
+<mat-sidenav-container>
   <!-- SIDENAV -->
-  <md-sidenav #sidenav mode="side" opened="true">
+  <mat-sidenav #sidenav mode="side" opened="true">
     <nav>
       <ul>
-        <li><md-list-item><a routerLink="/about" routerLinkActive="active">About</a></md-list-item></li>
+        <li><mat-list-item><a routerLink="/about" routerLinkActive="active">About</a></mat-list-item></li>
       </ul>
     </nav>
     <nav>
       <h3>Text</h3>
       <ul>
         <li><a routerLink="/text-diff" routerLinkActive="active">Difference</a></li>
-        <li><a href="#">Formatting</a></li>
+        <li><a routerLink="/text-format" routerLinkActive="active">Format</a></li>
       </ul>
     </nav>
-  </md-sidenav>
+  </mat-sidenav>
   <!-- CONTENT -->
   <div class="content">
     <router-outlet></router-outlet>
   </div>
-</md-sidenav-container>
+</mat-sidenav-container>

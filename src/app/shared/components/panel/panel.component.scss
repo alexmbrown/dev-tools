@@ -1,4 +1,8 @@
-md-card {
+:host {
+  display: block;
+}
+
+mat-card {
   width: calc(100% - 0.5rem);
   height: calc(100% - 0.5rem);
   background: none;
@@ -7,8 +11,9 @@ md-card {
   padding: 0;
 }
 
-md-card-header {
+mat-card-header {
   padding: 0.5rem 1rem;
+  max-height: 3.5rem;
   color: rgba(255, 255, 255, 0.7);
   background: rgba(255, 255, 255, 0.03);
   height: 3.5rem;
@@ -17,14 +22,14 @@ md-card-header {
   align-items: center;
   justify-content: space-between;
 
-  md-card-title {
+  mat-card-title {
     margin: 0;
     font-weight: 400;
-    font-size: 1.5rem;
+    font-size: 1.0rem;
   }
 }
 
-md-card-content {
+mat-card-content {
   padding: 0.5rem;
   width: 100%;
   height: calc(100% - 3.5rem);

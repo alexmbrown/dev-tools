@@ -9,15 +9,10 @@ import { ActivatedRoute, Data, Router } from '@angular/router';
 export class AppComponent implements OnInit {
 
   constructor(
-    private route: ActivatedRoute,
     private router: Router
   ) {}
 
-  public ngOnInit(): void {
-    this.route.data.subscribe((data: Data) => {
-      console.log(data);
-    });
-  }
+  public ngOnInit(): void {}
 
   public sourceLinkActive(): boolean {
     return this.router.url.indexOf('/source/') < 0;

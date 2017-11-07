@@ -26,3 +26,19 @@ textarea {
   color: white;
   outline: none;
 }
+
+.flex {
+  display: flex;
+}
+
+.flex.space-between {
+  justify-content: space-between;
+}
+
+.flex.center {
+  align-items: center;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}

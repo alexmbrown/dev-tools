@@ -6,6 +6,7 @@ const routes: Routes = [
     children: [
       { path: 'about', loadChildren: './about/about.module#AboutModule' },
       { path: 'text-diff', loadChildren: './text-diff/text-diff.module#TextDiffModule' },
+      { path: 'text-format', loadChildren: './text-format/text-format.module#TextFormatModule' },
       { path: 'source', loadChildren: './source-viewer/source-viewer.module#SourceViewerModule' },
       {
         path: '',
@@ -22,7 +23,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

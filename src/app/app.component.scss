@@ -1,12 +1,12 @@
-/deep/ mat-toolbar-row > md-icon {
+/deep/ mat-toolbar-row > mat-icon {
   padding-right: 1rem;
 }
 
-md-sidenav-container {
+mat-sidenav-container {
   height: 100vh;
 }
 
-md-sidenav {
+mat-sidenav {
   width: 15rem;
   box-shadow: 3px 0 6px rgba(0,0,0,.24);
 
@@ -62,4 +62,5 @@ md-sidenav {
 
 .content {
   padding: 1rem;
+  height: calc(100% - 6rem);
 }

@@ -11,7 +11,8 @@ export class SyntaxHighlightPipe implements PipeTransform {
     if (code && type) {
       let lang;
       switch (type) {
-        case 'html': lang = Prism.languages.html; break;
+        case 'html': case 'xml': lang = Prism.languages.html; break;
+        case 'json': lang = Prism.languages.json; break;
         case 'scss': lang = Prism.languages.scss; break;
         case 'typescript': lang = Prism.languages.typescript; break;
       }

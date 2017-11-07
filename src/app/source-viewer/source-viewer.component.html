@@ -1,14 +1,14 @@
-<md-tab-group>
-  <md-tab label="Description">
+<mat-tab-group>
+  <mat-tab label="Description">
     <div class="test2" [innerHtml]="readme | markdown"></div>
-  </md-tab>
-  <md-tab label="HTML">
+  </mat-tab>
+  <mat-tab label="HTML">
     <pre><code [innerHtml]="html | syntaxHighlight: 'html'" class="language-html"></code></pre>
-  </md-tab>
-  <md-tab label="TS">
+  </mat-tab>
+  <mat-tab label="TS">
     <pre><code [innerHtml]="ts | syntaxHighlight: 'typescript'" class="language-typescript"></code></pre>
-  </md-tab>
-  <md-tab label="SCSS">
+  </mat-tab>
+  <mat-tab label="SCSS">
     <pre><code [innerHtml]="scss | syntaxHighlight: 'scss'" class="language-scss"></code></pre>
-  </md-tab>
-</md-tab-group>
+  </mat-tab>
+</mat-tab-group>

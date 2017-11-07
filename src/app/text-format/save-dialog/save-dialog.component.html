@@ -1,0 +1,16 @@
+<h2 mat-dialog-title>Save Formatted Text</h2>
+<mat-dialog-content>
+  Please enter a&nbsp;
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Label" #labelInput>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions class="flex-end">
+  <button mat-button mat-dialog-close>No</button>
+  <button mat-button
+          color="primary"
+          [mat-dialog-close]="labelInput.value"
+          [disabled]="!labelInput.value">
+    Yes
+  </button>
+</mat-dialog-actions>
