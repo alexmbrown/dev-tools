@@ -7,6 +7,10 @@ body, html {
   font-size: 16px;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .fill {
   height: 100%;
   width: 100%;
@@ -41,4 +45,16 @@ textarea {
 
 .flex-end {
   justify-content: flex-end;
+}
+
+textarea {
+  overflow-y: auto;
+}
+
+.unbold {
+  font-weight: 300;
+}
+
+.muted {
+  opacity: 0.6;
 }

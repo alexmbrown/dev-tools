@@ -1,9 +1,9 @@
-/deep/ mat-toolbar-row > mat-icon {
-  padding-right: 1rem;
+/deep/ mat-toolbar-row > span:first-of-type {
+  margin-left: 0.5rem;
 }
 
 mat-sidenav-container {
-  height: 100vh;
+  height: calc(100vh - 4rem);
 }
 
 mat-sidenav {
@@ -62,5 +62,5 @@ mat-sidenav {
 
 .content {
   padding: 1rem;
-  height: calc(100% - 6rem);
+  height: 100%;
 }

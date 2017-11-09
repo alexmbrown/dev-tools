@@ -43,13 +43,13 @@ export class TextFormatComponent implements OnInit {
     if (this.codeFormat) {
       try {
         switch (this.codeFormat) {
-          case 'css':
+          case 'CSS':
             this.newPage.code = this.highlight.transform(pd.css(this.newPage.text), 'css');
             break;
-          case 'json':
+          case 'JSON':
             this.newPage.code = this.highlight.transform(pd.json(this.newPage.text), 'json');
             break;
-          case 'xml':
+          case 'XML':
             this.newPage.code = this.highlight.transform(pd.xml(this.newPage.text), 'xml');
             break;
         }

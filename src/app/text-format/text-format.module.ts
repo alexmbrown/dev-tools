@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
-  MatButtonModule, MatDialogModule, MatInputModule, MatSelectModule, MatSnackBarModule,
+  MatButtonModule, MatDialogModule, MatInputModule, MatMenuModule, MatSelectModule, MatSnackBarModule,
   MatTabsModule
 } from '@angular/material';
 import { SharedModule } from '../shared/shared.module';
@@ -28,6 +28,7 @@ import { TextFormatComponent } from './text-format.component';
     MatButtonModule,
     MatDialogModule,
     MatInputModule,
+    MatMenuModule,
     MatSelectModule,
     MatSnackBarModule,
     MatTabsModule

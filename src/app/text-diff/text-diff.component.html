@@ -25,9 +25,9 @@
       </dt-panel>
     </mat-grid-tile>
     <mat-grid-tile colspan="2">
-      <dt-panel title="Result" class="fill">
+      <dt-panel title="Result" class="fill scrollable">
         <dt-panel-content>
-          <div class="fill result" [innerHtml]="textDiff"></div>
+          <div class="fill result" [innerHtml]="textDiff" *ngIf="text1.value !== '' && text2.value !== ''"></div>
         </dt-panel-content>
       </dt-panel>
     </mat-grid-tile>

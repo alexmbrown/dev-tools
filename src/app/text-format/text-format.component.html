@@ -3,20 +3,22 @@
     <dt-panel class="fill" title="New">
       <dt-panel-actions *ngIf="isEditView()">
         <button mat-button *ngIf="codeFormat" (click)="format()">Format</button>
-        <mat-form-field>
-          <mat-select placeholder="Language" [(ngModel)]="codeFormat">
-            <mat-option value="css">CSS</mat-option>
-            <mat-option value="json">JSON</mat-option>
-            <mat-option value="xml">XML</mat-option>
-          </mat-select>
-        </mat-form-field>
+        <button mat-button [matMenuTriggerFor]="languageMenu">
+          <ng-container *ngIf="codeFormat">Language: <span class="muted unbold">{{codeFormat}}</span></ng-container>
+          <ng-container *ngIf="!codeFormat">Select Language</ng-container>
+        </button>
+        <mat-menu #languageMenu="matMenu">
+          <button mat-menu-item (click)="codeFormat = 'CSS'">CSS</button>
+          <button mat-menu-item (click)="codeFormat = 'JSON'">JSON</button>
+          <button mat-menu-item (click)="codeFormat = 'XML'">XML</button>
+        </mat-menu>
       </dt-panel-actions>
       <dt-panel-actions *ngIf="!isEditView()">
         <button mat-button (click)="clear()">Clear</button>
         <button mat-button (click)="save()">Save</button>
       </dt-panel-actions>
       <dt-panel-content *ngIf="isEditView()">
-        <textarea class="fill" matInput placeholder="Please Enter Text Here" [(ngModel)]="newPage.text"></textarea>
+        <textarea class="fill" placeholder="Please Enter Text Here" [(ngModel)]="newPage.text"></textarea>
       </dt-panel-content>
       <dt-panel-content *ngIf="!isEditView()">
         <pre><code [innerHtml]="newPage.code"></code></pre>

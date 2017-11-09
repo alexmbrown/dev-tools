@@ -10,6 +10,10 @@ textarea {
   resize: none;
 }
 
+dt-panel.scrollable /deep/ mat-card-content {
+  overflow-y: auto;
+}
+
 .result {
   font-size: 1.5rem;
 
