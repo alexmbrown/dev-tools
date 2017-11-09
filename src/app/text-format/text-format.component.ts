@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { pd } from 'pretty-data';
 import { SyntaxHighlightPipe } from '../shared/pipes/syntax-highlight.pipe';
 import { LocalStorageService } from '../core/services/local-storage.service';
@@ -20,6 +20,9 @@ const STORAGE_KEY = 'format-text';
   styleUrls: ['./text-format.component.scss']
 })
 export class TextFormatComponent implements OnInit {
+
+  @ViewChild('languageMenu')
+  public languageMenu;
 
   public codeFormat: string;
   public newPage: FormattedText = {};

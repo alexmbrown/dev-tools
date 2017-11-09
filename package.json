@@ -3,11 +3,12 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
     "start": "ng serve",
     "build:local": "ng build --prod",
     "build": "ng build --prod --base-href https://alexmbrown.github.io/dev-tools/",
     "pretest": "ng lint --fix",
-    "test": "ng test --single-run",
+    "test": "ng test -sr -cc",
     "e2e": "ng e2e"
   },
   "private": true,

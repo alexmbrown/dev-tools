@@ -10,7 +10,7 @@ before_script:
    - npm install -g @angular/cli
 
 script:
-#   - npm test
+   - npm test
 #   - npm e2e
    - npm run build
 
