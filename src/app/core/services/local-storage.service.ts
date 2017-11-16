@@ -5,9 +5,11 @@ declare const localStorage;
 @Injectable()
 export class LocalStorageService {
 
-  public set(key: string, obj: any): void {
-    if (typeof obj === 'object') {
-      localStorage.setItem(key, JSON.stringify(obj));
+  public set(key: string, value: any): void {
+    if (typeof value === 'object') {
+      localStorage.setItem(key, JSON.stringify(value));
+    } else {
+      localStorage.setItem(key, value);
     }
   }
 
