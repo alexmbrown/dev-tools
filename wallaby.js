@@ -9,7 +9,7 @@ module.exports = function (wallaby) {
 
   var webpackPostprocessor = wallabyWebpack({
     entryPatterns: [
-      'src/wallabyTest.ts',
+      'src/wallabyTest.js',
       'src/**/*spec.js'
     ],
 
@@ -45,7 +45,7 @@ module.exports = function (wallaby) {
 
   return {
     files: [
-      {pattern: 'src/**/*.+(ts|css|less|scss|sass|styl|html|json|svg)', load: false},
+      {pattern: 'src/**/*.+(js|ts|css|less|scss|sass|styl|html|json|svg)', load: false},
       {pattern: 'src/**/*.d.ts', ignore: true},
       {pattern: 'src/**/*spec.ts', ignore: true}
     ],
