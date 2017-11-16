@@ -1,26 +1,15 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import * as remark from 'remark';
-import * as  recommended from 'remark-preset-lint-recommended';
-import * as  html from 'remark-html';
-import * as  report from 'vfile-reporter';
+import { MarkdownService } from '../../core/services/markdown.service';
 
 @Pipe({
   name: 'markdown'
 })
 export class MarkdownPipe implements PipeTransform {
 
+  constructor(private markdownService: MarkdownService) {}
+
   public transform(value: string): string {
-    let result: string;
-    remark()
-      .use(recommended)
-      .use(html)
-      .process(value, (err, file) => {
-        if (err) {
-          console.error(report(err || file));
-        }
-        result = String(file);
-      });
-    return result;
+    return this.markdownService.transform(value);
   }
 
 }

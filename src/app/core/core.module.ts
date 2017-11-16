@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { SourceService } from './services/source.service';
 import { LocalStorageService } from './services/local-storage.service';
 import { HttpClientModule } from '@angular/common/http';
+import { MarkdownService } from './services/markdown.service';
 
 @NgModule({
   imports: [
@@ -11,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   providers: [
     LocalStorageService,
+    MarkdownService,
     SourceService
   ]
 })
