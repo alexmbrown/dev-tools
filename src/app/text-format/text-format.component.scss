@@ -27,4 +27,5 @@ mat-tab-group, /deep/ .mat-tab-body-wrapper {
 pre {
   margin: 0;
   height: 100%;
+  overflow-y: auto;
 }
