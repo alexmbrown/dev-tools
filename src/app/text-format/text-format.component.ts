@@ -110,7 +110,7 @@ export class TextFormatComponent implements OnInit {
   public copy(index: number): void {
     const range = document.createRange();
 
-    if (index) {
+    if (typeof index !== 'undefined') {
       range.selectNodeContents(this.code.toArray()[index].nativeElement);
     } else {
       range.selectNodeContents(this.newPageCode.nativeElement);
