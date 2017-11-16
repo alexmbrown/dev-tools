@@ -5,6 +5,8 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import { MarkdownPipeStub } from '../test-utils/markdown-pipe.stub';
 import { By } from '@angular/platform-browser';
+import { SharedModule } from '../shared/shared.module';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 describe('AboutComponent', () => {
 
@@ -22,7 +24,8 @@ describe('AboutComponent', () => {
       providers: [{
         provide: SourceService,
         useValue: jasmine.createSpyObj('sourceService', ['getReadme'])
-      }]
+      }],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }).compileComponents();
   }));
 

@@ -4,7 +4,8 @@ import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'dt-about',
-  templateUrl: './about.component.html'
+  templateUrl: './about.component.html',
+  styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
 
