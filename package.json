@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "codecov": "./node_modules/.bin/codecov",
     "start": "ng serve",
     "build:local": "ng build --prod",
     "build": "ng build --prod --base-href https://alexmbrown.github.io/dev-tools/",
@@ -44,8 +44,8 @@
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
     "angular2-template-loader": "^0.6.2",
+    "codecov": "^3.0.0",
     "codelyzer": "~3.1.1",
-    "coveralls": "^3.0.0",
     "electron": "^1.7.9",
     "jasmine-core": "~2.6.2",
     "jasmine-spec-reporter": "~4.1.0",
