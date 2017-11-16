@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewChildren } from '@angular/core';
 import { pd } from 'pretty-data';
 import { SyntaxHighlightPipe } from '../shared/pipes/syntax-highlight.pipe';
 import { LocalStorageService } from '../core/services/local-storage.service';
@@ -10,6 +10,7 @@ interface FormattedText {
   label?: string;
   text?: string;
   code?: string;
+  raw?: string;
 }
 
 const STORAGE_KEY = 'format-text';
@@ -20,6 +21,12 @@ const STORAGE_KEY = 'format-text';
   styleUrls: ['./text-format.component.scss']
 })
 export class TextFormatComponent implements OnInit {
+
+  @ViewChildren('code')
+  public code;
+
+  @ViewChild('newPageCode')
+  public newPageCode;
 
   @ViewChild('languageMenu')
   public languageMenu;
@@ -47,13 +54,16 @@ export class TextFormatComponent implements OnInit {
       try {
         switch (this.codeFormat) {
           case 'CSS':
-            this.newPage.code = this.highlight.transform(pd.css(this.newPage.text), 'css');
+            this.newPage.raw = pd.css(this.newPage.text);
+            this.newPage.code = this.highlight.transform(this.newPage.raw, 'css');
             break;
           case 'JSON':
-            this.newPage.code = this.highlight.transform(pd.json(this.newPage.text), 'json');
+            this.newPage.raw = pd.json(this.newPage.text);
+            this.newPage.code = this.highlight.transform(this.newPage.raw, 'json');
             break;
           case 'XML':
-            this.newPage.code = this.highlight.transform(pd.xml(this.newPage.text), 'xml');
+            this.newPage.raw = pd.xml(this.newPage.text);
+            this.newPage.code = this.highlight.transform(this.newPage.raw, 'xml');
             break;
         }
       } catch (err) {
@@ -71,7 +81,6 @@ export class TextFormatComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe((result: boolean) => {
-      console.log(result);
       if (result) {
         this.pages.splice(index, 1);
         this.storage.set(STORAGE_KEY, this.pages);
@@ -96,6 +105,21 @@ export class TextFormatComponent implements OnInit {
 
   public isEditView(): boolean {
     return this.newPage && typeof this.newPage.code === 'undefined';
+  }
+
+  public copy(index: number): void {
+    const range = document.createRange();
+
+    if (index) {
+      range.selectNodeContents(this.code.toArray()[index].nativeElement);
+    } else {
+      range.selectNodeContents(this.newPageCode.nativeElement);
+    }
+
+    const selection = window.getSelection();
+    selection.removeAllRanges();
+    selection.addRange(range);
+    document.execCommand('Copy');
   }
 
 }

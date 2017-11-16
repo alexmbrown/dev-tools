@@ -14,6 +14,7 @@
         </mat-menu>
       </dt-panel-actions>
       <dt-panel-actions *ngIf="!isEditView()">
+        <button mat-button (click)="copy()">Copy</button>
         <button mat-button (click)="clear()">Clear</button>
         <button mat-button (click)="save()">Save</button>
       </dt-panel-actions>
@@ -21,17 +22,18 @@
         <textarea class="fill" placeholder="Please Enter Text Here" [(ngModel)]="newPage.text"></textarea>
       </dt-panel-content>
       <dt-panel-content *ngIf="!isEditView()">
-        <pre><code [innerHtml]="newPage.code"></code></pre>
+        <pre><code #newPageCode [innerHtml]="newPage.code"></code></pre>
       </dt-panel-content>
     </dt-panel>
   </mat-tab>
   <mat-tab *ngFor="let page of pages; let i = index" [label]="page.label">
     <dt-panel class="fill" [title]="page.label">
       <dt-panel-actions>
+        <button mat-button (click)="copy(i)">Copy</button>
         <button mat-button (click)="delete(i)">Delete</button>
       </dt-panel-actions>
       <dt-panel-content>
-        <pre><code [innerHtml]="page.code"></code></pre>
+        <pre><code #code [innerHtml]="page.code" ></code></pre>
       </dt-panel-content>
     </dt-panel>
   </mat-tab>
